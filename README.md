@@ -25,19 +25,7 @@ mini-jvm
 - **MemoryManager.java**: Manages memory allocation and deallocation within the Mini JVM.
 - **Main.java**: Initializes the Mini JVM and starts the execution process.
 
-## Setup Instructions
-1. Clone the repository:
-   ```
-   git clone <repository-url>
-   ```
-2. Navigate to the project directory:
-   ```
-   cd mini-jvm
-   ```
-3. Build the project using Maven:
-   ```
-   mvn clean install
-   ```
+
 
 ## Usage Guidelines
 To run the Mini JVM, execute the `Main` class. You can provide Java bytecode files as input for execution. The Mini JVM will handle memory management and garbage collection automatically.
@@ -45,5 +33,3 @@ To run the Mini JVM, execute the `Main` class. You can provide Java bytecode fil
 ## Contributing
 Contributions are welcome! Please submit a pull request or open an issue for any enhancements or bug fixes.
 
-## License
-This project is licensed under the MIT License. See the LICENSE file for more details.#
