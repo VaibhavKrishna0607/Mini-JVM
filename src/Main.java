@@ -1,9 +1,13 @@
 public class Main {
     public static void main(String[] args) {
-        // Initialize the Mini JVM
-        MiniJVM miniJVM = new MiniJVM();
-        
-        // Start the execution process
-        miniJVM.execute();
+        String[] bytecode = {
+            "LOAD 5",
+            "LOAD 10",
+            "ADD",
+            "PRINT"
+        };
+
+        MiniJVM jvm = new MiniJVM();
+        jvm.execute(bytecode);
     }
 }
