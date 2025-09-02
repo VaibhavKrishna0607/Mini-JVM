@@ -13,7 +13,7 @@ public class MemoryManager {
     public int allocateMemory(int size) {
         // Logic to allocate memory of the specified size.
         int objectId = nextObjects++;
-        heap.put(pbjectId, new int[size]);
+        heap.put(objectId, new int[size]);
         System.out.println("[MemoryManager] -> Allocated array of size "+size+" with ObjectId "+objectId);
         System.out.println("[Heap] → ObjectID " + objectId + " → " + Arrays.toString(heap.get(objectId)));
         return objectId;
@@ -38,5 +38,22 @@ public class MemoryManager {
     }
 
 
-
+    // 🔹 Add this method below getArray()
+    public boolean exists(int objectId) {
+        return heap.containsKey(objectId);
     }
+
+    // 🔹 Optional: Add this for GC support
+    public Map<Integer, int[]> getHeapSnapshot() {
+        return new HashMap<>(heap);
+    }
+
+    public void deallocate(int objectId) {
+        heap.remove(objectId);
+        System.out.println("[MemoryManager] → Deallocated ObjectID: " + objectId);
+    }
+
+
+
+
+}

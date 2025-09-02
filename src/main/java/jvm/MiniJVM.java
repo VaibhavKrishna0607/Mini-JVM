@@ -10,7 +10,7 @@ public class MiniJVM {
         for(String instruction: bytecode){
             System.out.println("[MiniJVM] -> Instruction: "+instruction);
             String[] parts = instruction.split(" ");
-            String opcpde = parts[0];
+            String opcode = parts[0];
 
             switch(opcode){
             case "LOAD":
