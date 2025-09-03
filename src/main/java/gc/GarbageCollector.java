@@ -10,24 +10,24 @@ public class GarbageCollector {
     private final MemoryManager memoryManager;
     private final Set<Integer> marked = new HashSet<>();
 
-    public GarbageCollector(MemoryManager memoryManager){
+    public GarbageCollector(MemoryManager memoryManager) {
         this.memoryManager = memoryManager;
     }
 
-    public void mark(Set<Integer> roots){
-        System.out.println("[GC]->Starting mark phase");;
+    public void mark(Set<Integer> roots) {
+        System.out.println("[GC] → Starting mark phase");
         marked.clear();
-         for (int rootId : roots) {
+        for (int rootId : roots) {
             if (memoryManager.exists(rootId)) {
                 marked.add(rootId);
                 System.out.println("[GC] → Marked reachable ObjectID: " + rootId);
             } else {
                 System.out.println("[GC] ⚠ Root ObjectID not found: " + rootId);
             }
-
+        }
     }
-}
- public void sweep() {
+
+    public void sweep() {
         System.out.println("[GC] → Starting sweep phase");
         Map<Integer, int[]> heap = memoryManager.getHeapSnapshot();
         int freedCount = 0;
@@ -42,6 +42,4 @@ public class GarbageCollector {
 
         System.out.println("[GC] → Sweep complete. Freed " + freedCount + " objects");
     }
-
-    
 }
