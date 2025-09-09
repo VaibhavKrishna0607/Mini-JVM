@@ -1,7 +1,7 @@
 # Mini JVM
 
 ## Overview
-The Mini JVM project is a simplified Java Virtual Machine implementation designed for educational purposes. It demonstrates the core concepts of memory management, garbage collection, and bytecode execution. The project includes essential components such as a garbage collector, memory manager, and the main execution engine.
+The Mini JVM project is a simplified Java Virtual Machine implementation. It demonstrates the core concepts of memory management, garbage collection, and bytecode execution. The project includes essential components such as a garbage collector, memory manager, and the main execution engine and can be integrated with backend projects such as GenAI and Java Springboot. Mini JVM is built with a focus on low-level execution modeling, modular runtime orchestration, and explicit memory lifecycle control. Each subsystem—from stack frames to garbage collection—is designed to mirror real-world runtime environments, making the architecture adaptable to plugin-based systems and cross-platform backends.
 
 ## Project Structure
 ```
@@ -35,30 +35,31 @@ mini-jvm/
 └── README.md                                 # Project overview
 
 ## Components
-- **GarbageCollector.java**: Implements memory management and garbage collection with methods for collecting garbage, marking objects, and sweeping memory.
-- **MiniJVM.java**: The main entry point for the Mini JVM, responsible for executing Java bytecode.
-- **MemoryManager.java**: Manages memory allocation and deallocation within the Mini JVM.
-- **Main.java**: Initializes the Mini JVM and starts the execution process.
+- **MiniJVM.java**: Executes bytecode instructions and manages control flow
+- **MemoryManager.java**: Allocates and tracks heap objects
+- **GarbageCollector.java**: Implements mark-and-sweep collection
+- **Debugger.java**: Enables step-through execution and runtime inspection
+- **Logger.java**: Centralized logging for traceability and diagnostics
 
-## Setup Instructions
-1. Clone the repository:
-   ```
-   git clone <repository-url>
-   ```
-2. Navigate to the project directory:
-   ```
-   cd mini-jvm
-   ```
-3. Build the project using Maven:
-   ```
-   mvn clean install
-   ```
+
+
+## Skills Demonstrated
+- Object-oriented design and modular architecture
+- Manual memory management and garbage collection
+- Bytecode interpretation and runtime simulation
+- Logging and debugging infrastructure
+- Maven-based build and dependency management
+
+
+## Setup  
+To build and run the Mini JVM:  
+```bash
+git clone <repository-url>
+cd mini-jvm
+mvn clean install
 
 ## Usage Guidelines
 To run the Mini JVM, execute the `Main` class. You can provide Java bytecode files as input for execution. The Mini JVM will handle memory management and garbage collection automatically.
 
-## Contributing
-Contributions are welcome! Please submit a pull request or open an issue for any enhancements or bug fixes.
 
-## License
-This project is licensed under the MIT License. See the LICENSE file for more details.#
+
